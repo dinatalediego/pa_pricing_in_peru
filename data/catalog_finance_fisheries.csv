@@ -1,0 +1,6 @@
+source_id,market,provider,dataset,frequency,coverage,access,priority,url
+SBS_RATES,credit,SBS,"Tasas de interés por tipo de crédito y empresa",daily/monthly,"2002-2026 visible in portal",public,high,"https://www.sbs.gob.pe/app/pp/EstadisticasSAEEPortal/Paginas/TasaInteresActivasMenu.aspx"
+SBS_SERIES,credit,SBS,"Series históricas descargables del sistema financiero",monthly,"historical",public,high,"https://www.sbs.gob.pe/app/pp/seriesHistoricas2/paso1.aspx"
+BCRP_POLICY,credit,BCRP,"Tasa de referencia/interbancaria y liquidez",daily/monthly,"historical-current",public,high,"https://estadisticas.bcrp.gob.pe/"
+PRODUCE_IMARPE,fisheries,PRODUCE/IMARPE,"Desembarques, cuotas, biomasa y temporadas",various,"historical-current",public_or_request,medium,"https://www.gob.pe/produce"
+INT_FISHMEAL,fisheries,international,"Precios internacionales harina/aceite de pescado",monthly,"historical",public_or_vendor,medium,""
