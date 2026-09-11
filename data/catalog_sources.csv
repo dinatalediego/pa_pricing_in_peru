@@ -1,0 +1,13 @@
+source_id,market,provider,dataset,frequency,coverage,access,priority,url
+BCRP_HPI,housing,BCRP,"Índice de precios hedónicos de inmuebles PD37940PQ",quarterly,"2007Q4-2026Q1",public,high,"https://estadisticas.bcrp.gob.pe/estadisticas/series/trimestrales/resultados/PD37940PQ"
+BCRP_HOUSING,housing,BCRP,"Mercado inmobiliario: 41 series",quarterly,"varies through 2026Q1",public,high,"https://estadisticas.bcrp.gob.pe/estadisticas/series/trimestrales/mercado-inmobiliario"
+BCRP_MORT_RATE,housing_credit,BCRP,"Tasa hipotecaria bancaria MN PN07848NM",monthly,"2001-2026",public,high,"https://estadisticas.bcrp.gob.pe/estadisticas/series/cuadros/notasemanalmensual/cn-031"
+BCRP_MORT_CREDIT,housing_credit,BCRP,"Crédito hipotecario PN00542MM/PN00538MM",monthly,"2001/2002-2026",public,high,"https://estadisticas.bcrp.gob.pe/estadisticas/series/mensuales/resultados/PN00538MM"
+INEI_IPMC,construction,INEI,"Índice de Precios de Materiales de Construcción",monthly,"historical-current",public,high,"https://www.inei.gob.pe/estadisticas/indice-tematico/price-indexes/"
+INEI_IUPC,construction,INEI,"Índices Unificados de Precios de Construcción",monthly,"historical-current",public,medium,"https://www.inei.gob.pe/buscador/?tbusqueda=indices+unificados"
+MDSI_LICENSES,housing_supply,Municipalidad San Isidro,"Licencias de edificación",monthly_updates,"through 2025-09 snapshot found",public,medium,"https://www.datosabiertos.gob.pe/dataset/mdsi-licencias-de-edificacion-autorizacion-y-control"
+OSINERGMIN_FUEL,fuel,Osinergmin,"Precios y seguimiento hidrocarburos líquidos",high_frequency,"current/historical",public,high,"https://dassem.osinergmin.gob.pe/pages/hidrocarburos-liquidos.html"
+OSINERGMIN_REF,fuel,Osinergmin,"Precios de referencia",weekly,"current/historical",public,high,"https://www.osinergmin.gob.pe/seccion/institucional/Paginas/VisorPreciosReferencia.aspx"
+MIDAGRI_SIEA,cacao,MIDAGRI/SIEA,"Producción, rendimiento y precio en chacra",monthly/annual,regional,public,high,"https://siea.midagri.gob.pe/portal/"
+BCRP_CACAO,cacao_exports,BCRP,"Exportaciones agropecuarias - cacao PN43518BQ",quarterly,"2012-2026",public,medium,"https://estadisticas.bcrp.gob.pe/estadisticas/series/trimestrales/exportaciones-por-grupo-de-actividad-economica-fob-millones-us%24-t-bpm6n"
+PRIVATE_UNIT_PANEL,housing,internal,"Unidad × tiempo: precio, descuento, stock, estado, venta",weekly/monthly,"depends on internal history",private,critical,"DO_NOT_PUBLISH_RAW"
