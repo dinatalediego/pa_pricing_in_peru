@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Private / client data
+data/private/
+data/client_exports/
+data/medallio/
+data/cygnus/
+exports/private/
+exports/medallio/
+*.dump
+*.sql.gz
+
+# Local analytical artifacts
+*.parquet
+*.feather
+*.duckdb
+*.db
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Keep public small processed snapshots explicitly committed when intended
+!data/processed/*.csv
