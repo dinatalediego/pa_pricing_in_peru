@@ -1,0 +1,64 @@
+version: 1
+updated_at: "2026-09-10"
+
+research_project:
+  repository: dinatalediego/pa_pricing_in_peru
+  role: academic_owner
+
+sources:
+  medallio:
+    repository: dinatalediego/bd_replica_crm
+    system: medallio_dw
+    role: private_micro_client
+    access_mode: select_only
+    pii_allowed_in_research_repo: false
+    owns:
+      - commercial_lifecycle
+      - canonical_sales
+      - inventory_movements
+      - point_in_time_stock
+      - absorption
+      - operational_data_quality
+    pending_evidence:
+      - point_in_time_unit_pricing
+      - point_in_time_discount
+
+  peruvian_real_estate_longitudinal_engine:
+    repository: dinatalediego/decidecasa-platform
+    project_path: decidecasa-platform/data_inmobiliaria_ml_training/real_analytics_full_project/real_analytics_full_project
+    system: Supabase
+    role: public_market_longitudinal_client
+    access_mode: read_contract
+    certified_relations_observed:
+      - gold.fact_project_snapshot
+      - gold.fact_tipologia_snapshot
+      - gold.fact_project_event
+    observed_at: "2026-09-10"
+    observed_counts:
+      fact_project_snapshot: 11400
+      fact_tipologia_snapshot: 126779
+      fact_project_event: 7426
+      projects_in_project_snapshot: 681
+    coverage:
+      start: "2026-05-17"
+      end_observed: "2026-09-11"
+
+join_policy:
+  forbidden:
+    - client_identity
+    - dni
+    - phone
+    - email
+  allowed:
+    - date
+    - project_when_public_and_resolved
+    - district
+    - typology
+    - bedrooms_bucket
+    - area_bucket
+    - price_segment
+    - spatial_cell
+
+ownership_rule:
+  source_business_logic_stays_in_source_repo: true
+  research_estimators_stay_in_pa_pricing_in_peru: true
