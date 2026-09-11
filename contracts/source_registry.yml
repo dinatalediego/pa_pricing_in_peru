@@ -1,5 +1,5 @@
-version: 1
-updated_at: "2026-09-10"
+version: 2
+updated_at: "2026-09-11"
 
 research_project:
   repository: dinatalediego/pa_pricing_in_peru
@@ -12,6 +12,29 @@ sources:
     role: private_micro_client
     access_mode: select_only
     pii_allowed_in_research_repo: false
+
+    research_replica:
+      system: Supabase
+      status: target_ready_data_load_pending
+      private: true
+      data_api_exposed: false
+      schemas:
+        - medallio_raw_cygnus
+        - medallio_raw_mercado
+        - medallio_staging
+        - medallio_core
+        - medallio_analytics
+        - medallio_etl_control
+        - medallio_features
+        - medallio_decision_intelligence
+        - medallio_model_control
+        - medallio_experiments
+        - medallio_observability
+      research_schema: medallio_research
+      audit_schema: medallio_admin
+      writer_repository: dinatalediego/bd_replica_crm
+      writer_script: scripts/sync_medallio_to_supabase.py
+
     owns:
       - commercial_lifecycle
       - canonical_sales
@@ -19,9 +42,16 @@ sources:
       - point_in_time_stock
       - absorption
       - operational_data_quality
+
+    pricing_evidence_observed:
+      - raw_mercado.unidades_historial
+      - raw_cygnus.proforma_unidad
+      - raw_cygnus.proformas
+
     pending_evidence:
-      - point_in_time_unit_pricing
-      - point_in_time_discount
+      - point_in_time_unit_pricing_semantics
+      - list_vs_quote_vs_transaction_price_alignment
+      - treatment_overlap
 
   peruvian_real_estate_longitudinal_engine:
     repository: dinatalediego/decidecasa-platform
@@ -62,3 +92,4 @@ join_policy:
 ownership_rule:
   source_business_logic_stays_in_source_repo: true
   research_estimators_stay_in_pa_pricing_in_peru: true
+  raw_private_rows_never_enter_git: true
